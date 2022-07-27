@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block content %}
+<main>
+    <section class="d-flex justify-content-center mt-5 pt-5 text-center">
+        <div class="mt-5 bg-info w-50 p-5 border border-dark text-light rounded">
+            <form class="flex justify-content-around" method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                <label class="lead me-3" for="">{{field.label}}: </label>
+                {{field}}
+                <p></p>
+                {% endfor %}
+            
+                <button class="btn btn-primary" type="submit">Upload</button>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock content %}
+ 
+
+

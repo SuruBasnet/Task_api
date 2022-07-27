@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block content %}
+<main>
+    <form method="POST" action=" ">
+        {% csrf_token %}
+        <h2> Are You sure you want to delete {{v.caption}}?</h2>
+        <button class="btn btn-warning" type="submit">YES</button>
+        <a href="{% url 'home' %}"><button class="btn btn-primary">NO</button></a>
+    </form>
+</main>
+
+{% endblock content %}
